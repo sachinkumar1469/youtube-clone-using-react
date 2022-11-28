@@ -1,30 +1,30 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react'
+import './app.scss'
 
-import Header from "./components/Header";
-import Feed from "./components/Feed";
-import SearchResult from "./components/SearchResult";
-import VideoDetails from "./components/VideoDetails";
-import { AppContext } from "./context/contextApi";
+import About from './component/about/About.jsx'
+import Contact from './component/contact/Contact.jsx'
+import Experience from './component/experience/Experience.jsx'
+import Skills from './component/skills/Skills.jsx'
+import Project from './component/pProjects/Project'
+import Achievements from './component/achievements/Achievements'
+import Header from './component/header/Header'
+import Footer from './component/footer/Footer'
+import Nav from './component/nav/Nav'
 
 const App = () => {
-    return (
-        <AppContext>
-            <BrowserRouter>
-                <div className="flex flex-col h-full">
-                    <Header />
-                    <Routes>
-                        <Route path="/" exact element={<Feed />} />
-                        <Route
-                            path="/searchResult/:searchQuery"
-                            element={<SearchResult />}
-                        />
-                        <Route path="/video/:id" element={<VideoDetails />} />
-                    </Routes>
-                </div>
-            </BrowserRouter>
-        </AppContext>
-    );
-};
+  return (
+    <>
+      <Header/>
+      <Nav/>
+      <About/>
+      <Skills/>
+      <Experience/>
+      <Project/>
+      <Achievements/>
+      <Contact/>
+      <Footer/>
+    </>
+  )
+}
 
-export default App;
+export default App
